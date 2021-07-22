@@ -1,0 +1,66 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.inner_flex {
+  display: flex;
+  flex: 1;
+}
+
+.options {
+  padding: 1% 2%;
+  width: 200px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: #423f3e;
+}
+
+.options label {
+  display: block;
+  margin: 4% 1%;
+}
+
+.options input,
+.options select,
+button {
+  display: block;
+  width: 90%;
+  padding: 3% 5%;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .inner_flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .options {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0.5rem;
+    padding: 2% 5%;
+    border-radius: 5px;
+  }
+
+  .options label {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .options input,
+  .options select,
+  button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-radius: 5px;
+  }
+}
