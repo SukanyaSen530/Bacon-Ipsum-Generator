@@ -55,10 +55,16 @@ export default function Page() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    var options = {
+      method: 'GET',
+      url: 'https://mashape-community-skate-ipsum.p.rapidapi.com/3/1/JSON',
+      headers: {
+        'x-rapidapi-key': '7000476f62msh97b9973e46a24dbp161a07jsn93bd815907b5',
+        'x-rapidapi-host': 'mashape-community-skate-ipsum.p.rapidapi.com'
+      }
+    };
     axios
-      .get(
-        `https://baconipsum.com/api/?type=all-meat&paras=${state.value}&start-with-lorem=1`
-      )
+      .request(options)
       .then((response) => {
         dispatch({ type: "FETCH_SUCCESS", payload: response.data });
       })
@@ -72,7 +78,7 @@ export default function Page() {
     <ParaContext.Provider value={{ state, dispatch }}>
       <main className="Main">
         <section className="container title">
-          Bacon Ipsum Text Generator
+          Random Text Generator
         </section>
         <section className="container">{<Options />}</section>
         <section className="container" style={{ textAlign: "justify" }}>
