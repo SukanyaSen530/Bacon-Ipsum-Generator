@@ -57,7 +57,7 @@ export default function Page() {
   useEffect(() => {
     var options = {
       method: 'GET',
-      url: 'https://mashape-community-skate-ipsum.p.rapidapi.com/3/1/JSON',
+      url: `https://mashape-community-skate-ipsum.p.rapidapi.com/${state.value}/1/JSON`,
       headers: {
         'x-rapidapi-key': '7000476f62msh97b9973e46a24dbp161a07jsn93bd815907b5',
         'x-rapidapi-host': 'mashape-community-skate-ipsum.p.rapidapi.com'
@@ -67,6 +67,7 @@ export default function Page() {
       .request(options)
       .then((response) => {
         dispatch({ type: "FETCH_SUCCESS", payload: response.data });
+        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);
